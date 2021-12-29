@@ -13,8 +13,14 @@ class CreateDiscountTable extends Migration
      */
     public function up()
     {
-        Schema::create('discount', function (Blueprint $table) {
+        Schema::create('discounts', function (Blueprint $table) {
             $table->id();
+			$table->string('title');
+			$table->string('code')->nullable();
+			$table->longText('description');
+			$table->date('start_at');
+			$table->date('end_at');
+			$table->string('main_image')->nullable();
             $table->timestamps();
         });
     }
